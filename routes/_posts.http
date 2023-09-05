@@ -1,0 +1,36 @@
+GET http://localhost:5050/posts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmxhZGltaXJvIiwic3VybmFtZSI6IkRyYWN1bG8iLCJlbWFpbCI6ImJsb29kQGdtYWlsLmNvbSIsImRvYiI6IjIzLzA3LzE5NzciLCJhdmF0YXIiOiJodHRwczovL3d3dy5mcmVlcGlrLmNvbS9wcmVtaXVtLWFpLWltYWdlL211c2xpbS1tZW4tc2l0LXJlYWQtYm9va3MtcHJheV81OTEyMjg1Ni5odG0jcXVlcnk9aW1nJnBvc2l0aW9uPTQ3JmZyb21fdmlldz1rZXl3b3JkJnRyYWNrPXNwaCIsImlhdCI6MTY5Mzc1NzAyNywiZXhwIjoxNjkzODQzNDI3fQ.PIRxWPHBE3CQ8GYh3b2NND4CUjCKi5XVV5Deo89A6pM
+#####
+POST http://localhost:5050/posts/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "category": "Referencing",
+    "title": "Post con referencing",
+    "cover": "https://picsum.photos/300/300",
+    "readTime": {
+        "value": 1,
+        "unit": "minutes"
+    },
+    "author": "64f4ad098f735322405935c0",
+    "content": "Nuovo 2 post per provare che sia a post." 
+}
+
+#####
+GET http://localhost:5050/posts/64f4ad098f735322405935c0
+
+#####
+PATCH http://localhost:5050/posts/64f4ad098f735322405935c0 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "TITOLO qualunque"
+}
+
+#####
+DELETE http://localhost:5050/posts/64f4ad098f735322405935c0
+
+
+#####
+GET http://localhost:5050/posts/title?postTitle=

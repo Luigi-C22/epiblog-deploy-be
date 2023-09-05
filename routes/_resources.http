@@ -1,0 +1,19 @@
+GET http://localhost:5050/resources
+
+#####
+GET http://localhost:5050/resources/?isActive=true
+
+#####
+GET http://localhost:5050/resources/?age=26
+
+#####
+GET http://localhost:5050/resources/?age={$gt:parseInt(26),$lte:parseInt(30)}
+
+#####
+GET http://localhost:5050/resources/?eyeColor={$in:["brown","blue"]}
+
+#####
+GET http://localhost:5050/resources/?eyeColor={$ne:"green"}
+
+#####
+GET http://localohost:5050/resources/?company="FITCORE"
